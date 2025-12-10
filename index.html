@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ROSE BIBLE • King James Version • Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      font-family: "Cinzel", serif;
+      color: #ffffff;
+      background: linear-gradient(90deg,
+        #6f0000 0%,
+        #200122 15%,
+        #090a0f 40%,
+        #000000 50%,
+        #090a0f 60%,
+        #200122 85%,
+        #6f0000 100%
+      );
+      background-size: 200% 200%;
+      animation: bgShift 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift {
+      0%   { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .landing-wrap {
+      height: 100vh;
+    }
+
+    .landing-card {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 36px 26px 44px;
+      border-radius: 24px;
+      background: rgba(0, 0, 0, 0.55);
+      box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.25),
+        0 0 55px rgba(255, 0, 255, 0.22),
+        0 0 95px rgba(255, 120, 0, 0.25);
+      backdrop-filter: blur(3px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .coming-soon {
+      font-size: 1.35rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #ff4dff;
+      text-shadow:
+        0 0 6px rgba(255, 0, 255, 0.8),
+        0 0 16px rgba(255, 0, 255, 0.6);
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
+      19%, 21%, 23%, 24%, 54%, 56%      { opacity: 0.3; }
+    }
+
+    .neon-divider {
+      width: 120px;
+      height: 2px;
+      margin: 20px auto;
+      background: linear-gradient(90deg, #ff4dff, #00e5ff);
+      box-shadow:
+        0 0 8px rgba(255, 77, 255, 0.9),
+        0 0 14px rgba(0, 229, 255, 0.9);
+      animation: dividerPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes dividerPulse {
+      0%, 100% { transform: scaleX(1); opacity: 1; }
+      50%      { transform: scaleX(1.25); opacity: 0.85; }
+    }
+
+    .main-title {
+      margin-top: 20px;
+      margin-bottom: 6px;
+      font-size: 3.2rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #ff0066;
+      text-shadow:
+        0 0 12px rgba(255, 0, 102, 0.9),
+        0 0 35px rgba(255, 0, 102, 0.65),
+        0 0 70px rgba(255, 0, 102, 0.5);
+      animation: titleIn 1.5s ease-out;
+    }
+
+    @keyframes titleIn {
+      0%   { transform:translateY(-40px) scale(0.9); }
+      60%  { transform:translateY(0) scale(1.05); }
+      100% { transform:translateY(0) scale(1); }
+    }
+
+    .subtitle {
+      font-size: 1.55rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: #00eaff;
+      text-shadow:
+        0 0 8px rgba(0, 229, 255, 0.9),
+        0 0 28px rgba(0, 229, 255, 0.7);
+      margin-bottom: 18px;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      opacity: 0.9;
+      margin-bottom: 25px;
+    }
+
+    /* ===========================
+       Neon Sneak Peek Button
+       =========================== */
+    .neon-btn {
+      display: inline-block;
+      padding: 14px 38px;
+      margin-top: 12px;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      background: rgba(255, 0, 102, 0.2);
+      border: 2px solid #ff0066;
+      box-shadow:
+        0 0 8px #ff0066,
+        0 0 16px #ff2ea6,
+        inset 0 0 12px rgba(255, 0, 102, 0.5);
+      transition: 0.22s ease-in-out;
+    }
+
+    .neon-btn:hover {
+      background: #ff0066;
+      box-shadow:
+        0 0 12px #ff0066,
+        0 0 25px #ff2ea6,
+        0 0 45px #ff2ea6,
+        inset 0 0 18px rgba(0, 0, 0, 0.8);
+      transform: scale(1.06);
+    }
+
+    .burst {
+      animation: cardBurst 0.7s ease-out;
+    }
+
+    @keyframes cardBurst {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width:600px) {
+      .main-title { font-size: 2.4rem; }
+      .subtitle { font-size: 1.2rem; }
+      .coming-soon { font-size: 1.1rem; }
+      .landing-card { margin: 0 12px; padding: 28px 18px 34px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="w3-display-container landing-wrap">
+    <div class="w3-display-middle" style="width:100%;">
+      <div id="landingCard" class="landing-card w3-center">
+
+        <div class="coming-soon">COMING&nbsp;SOON</div>
+
+        <div class="neon-divider"></div>
+
+        <h1 class="main-title">ROSE BIBLE</h1>
+        <div class="subtitle">KING&nbsp;JAMES&nbsp;VERSION</div>
+
+        <p class="tagline">
+          A powerful Strong’s-driven interactive KJV Bible experience — coming soon.
+        </p>
+
+        <!-- 🌟 NEW NEON BUTTON -->
+        <a href="index2.html" class="neon-btn">Sneak Peek</a>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
