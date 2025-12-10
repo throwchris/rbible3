@@ -176,7 +176,9 @@
   </style>
 </head>
 
+
 <body>
+  <audio id="whooshSound" src="whoosh.mp3" preload="auto"></audio>
 
   <div class="w3-display-container landing-wrap">
     <div class="w3-display-middle" style="width:100%;">
@@ -194,11 +196,43 @@
         </p>
 
         <!-- 🌟 NEW NEON BUTTON -->
-        <a href="index2.html" class="neon-btn">Sneak Peek</a>
+        <a href="#" class="neon-btn" onclick="playWhooshThenGo()">Sneak Peek</a>
+
+
 
       </div>
     </div>
   </div>
-
+  <script>
+    function playWhooshThenGo() {
+        const audio = document.getElementById("whooshSound");
+    
+        if (!audio) {
+            // fallback if audio element missing
+            window.location.href = "index2.html";
+            return;
+        }
+    
+        // Restart sound to the beginning
+        audio.currentTime = 0;
+    
+        // Play the audio
+        audio.play().then(() => {
+            console.log("Whoosh started playing…");
+    
+            // When the FULL audio finishes, redirect
+            audio.onended = function () {
+                console.log("Whoosh finished. Going to index2.html");
+                window.location.href = "index2.html";
+            };
+    
+        }).catch(err => {
+            console.warn("Autoplay blocked or error:", err);
+            window.location.href = "index2.html"; // fallback
+        });
+    }
+    </script>
+    
+    
 </body>
 </html>
