@@ -209,7 +209,7 @@
     
         if (!audio) {
             // fallback if audio element missing
-            window.location.href = "index2.html";
+            window.location.href = "chap4.html";
             return;
         }
     
@@ -223,12 +223,12 @@
             // When the FULL audio finishes, redirect
             audio.onended = function () {
                 console.log("Whoosh finished. Going to index2.html");
-                window.location.href = "index2.html";
+                window.location.href = "chap4.html";
             };
     
         }).catch(err => {
             console.warn("Autoplay blocked or error:", err);
-            window.location.href = "index2.html"; // fallback
+            window.location.href = "chap4.html"; // fallback
         });
     }
     </script>
@@ -236,3 +236,4 @@
     
 </body>
 </html>
+
